@@ -15,16 +15,11 @@ function galleryCreateMarkup(items) {
         .map(({ preview, original, description }) =>
         `
     <li class="gallery__item">
-  <a class="gallery__link" href="${original}">
-    <img
-      class="gallery__image"
-      src="${preview}"
-      data-source="${original}"
-      alt="${description}"
-    />
-  </a>
+   <a class="gallery__link" href="${original}">
+      <img class="gallery__image" src="${preview}" alt="${description}" />
+   </a>
 </li>
-    `,)
+    `)
         .join('');
 }
 
@@ -33,7 +28,6 @@ function onGalleryElClick(evt) {
     console.log(evt.target);
 
     const imgSource = evt.target.dataset.source;
-    console.log(imgSource);
     const instance = basicLightbox.create(
     `
     <img src="${imgSource}" width="800" height="600">
